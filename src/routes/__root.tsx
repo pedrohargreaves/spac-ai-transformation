@@ -86,21 +86,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SPAC Gestão — Consultoria Estratégica com Inteligência Artificial" },
+      { title: "SPAC Gestão — Democratizar a transformação para quem quer fazer a diferença" },
       {
         name: "description",
         content:
-          "Consultoria estratégica premium para empresários. Estruturamos gestão de resultados e aplicamos IA proprietária para transformar operações brasileiras.",
+          "Unimos sonho e visão de longo prazo com controle e gestão no curto prazo. Consultoria em Estratégia, Gestão Comercial, Digital, Growth, M&A, Processos e IA aplicada.",
       },
       { name: "author", content: "SPAC Gestão" },
-      { property: "og:title", content: "SPAC Gestão — Estratégia, Gestão & Inteligência" },
+      { property: "og:title", content: "SPAC Gestão — Democratizar a transformação para quem quer fazer a diferença" },
       {
         property: "og:description",
         content:
-          "Transformamos grandes operações brasileiras em resultados exponenciais através de IA e gestão de alta performance.",
+          "Unimos sonho e visão de longo prazo com controle e gestão no curto prazo. Consultoria em Estratégia, Gestão Comercial, Digital, Growth, M&A, Processos e IA aplicada.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SPAC Gestão — Democratizar a transformação para quem quer fazer a diferença" },
+      { name: "twitter:description", content: "Unimos sonho e visão de longo prazo com controle e gestão no curto prazo. Consultoria em Estratégia, Gestão Comercial, Digital, Growth, M&A, Processos e IA aplicada." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ea973321-a547-4312-879f-1ace01009f6a/id-preview-a253f0c3--5572321a-fa4b-4a10-8be0-70725c78464d.lovable.app-1783564936694.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ea973321-a547-4312-879f-1ace01009f6a/id-preview-a253f0c3--5572321a-fa4b-4a10-8be0-70725c78464d.lovable.app-1783564936694.png" },
     ],
     links: [
       {
