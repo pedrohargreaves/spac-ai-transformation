@@ -11,14 +11,51 @@ import {
   Globe,
   ArrowUpRight,
 } from "lucide-react";
-import founderVinicius from "@/assets/founder-vinicius.jpg";
-import founderAugusto from "@/assets/founder-augusto.jpg";
 import purposeBg from "@/assets/purpose-bg.jpg";
 import servicesBg from "@/assets/services-bg.jpg";
 import sectionBgDark from "@/assets/section-bg-dark.jpg";
-import insight1 from "@/assets/insight-1.jpg";
-import insight2 from "@/assets/insight-2.jpg";
-import insight3 from "@/assets/insight-3.jpg";
+
+// Brand logo
+import spacLogoDark from "@/assets/spac/spac-logo-dark.png";
+import spacLogoLight from "@/assets/spac/spac-logo-light.png";
+
+// Founders + universities
+import founderVinicius from "@/assets/spac/founder-vinicius.png";
+import founderAugusto from "@/assets/spac/founder-augusto.png";
+import uniStanford from "@/assets/spac/uni-stanford.png";
+import uniHarvard from "@/assets/spac/uni-harvard.png";
+import uniEsade from "@/assets/spac/uni-esade.png";
+import uniUfmg from "@/assets/spac/uni-ufmg.png";
+import uniFdc from "@/assets/spac/uni-fdc.png";
+import uniSouthFlorida from "@/assets/spac/uni-southflorida.png";
+
+// Testimonial photos
+import depoRodolfo from "@/assets/spac/depo-rodolfo.png";
+import depoKarina from "@/assets/spac/depo-karina.png";
+import depoFelipe from "@/assets/spac/depo-felipe.png";
+
+// Client logos (from institutional PDF)
+import clAbc from "@/assets/spac/client-abc.jpg";
+import clZelo from "@/assets/spac/client-zelo.jpg";
+import clApoio from "@/assets/spac/client-apoio.png";
+import clNagumo from "@/assets/spac/client-nagumo.jpg";
+import clBanana from "@/assets/spac/client-banana.jpg";
+import clAngus from "@/assets/spac/client-angus.jpg";
+import clBora from "@/assets/spac/client-bora.jpg";
+import clDecminas from "@/assets/spac/client-decminas.png";
+import clBigbox from "@/assets/spac/client-bigbox.jpg";
+import clSupernosso from "@/assets/spac/client-supernosso.png";
+import clBehonest from "@/assets/spac/client-behonest.png";
+import clMacre from "@/assets/spac/client-macre.png";
+import clOrganico from "@/assets/spac/client-organico.png";
+import clTerral from "@/assets/spac/client-terral.png";
+import clAeris from "@/assets/spac/client-aeris.png";
+import clNyrstar from "@/assets/spac/client-nyrstar.png";
+import clMilton from "@/assets/spac/client-miltoncampos.png";
+import clNetservice from "@/assets/spac/client-netservice.png";
+import clRaros from "@/assets/spac/client-raros.png";
+import clFazenda from "@/assets/spac/client-fazendaconforto.png";
+import clBaleia from "@/assets/spac/client-hospitalbaleia.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,26 +71,21 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-/* ---------- SPAC SYMBOL ---------- */
+/* ---------- BRAND LOGO ---------- */
 
-function SpacMark({ className = "", size = 40 }: { className?: string; size?: number }) {
+function SpacLogo({
+  variant = "dark",
+  className = "",
+}: {
+  variant?: "dark" | "light";
+  className?: string;
+}) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      width={size}
-      height={size}
+    <img
+      src={variant === "dark" ? spacLogoDark : spacLogoLight}
+      alt="SPAC"
       className={className}
-      aria-hidden="true"
-      fill="none"
-    >
-      <rect x="1" y="1" width="98" height="98" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="50" y1="1" x2="50" y2="99" stroke="currentColor" strokeWidth="1" opacity="0.35" />
-      <line x1="1" y1="50" x2="99" y2="50" stroke="currentColor" strokeWidth="1" opacity="0.35" />
-      <text x="25" y="38" textAnchor="middle" fontFamily="Instrument Serif, serif" fontSize="26" fill="currentColor" fontStyle="italic">S</text>
-      <text x="75" y="38" textAnchor="middle" fontFamily="Instrument Serif, serif" fontSize="26" fill="currentColor" fontStyle="italic">P</text>
-      <text x="25" y="82" textAnchor="middle" fontFamily="Instrument Serif, serif" fontSize="26" fill="currentColor" fontStyle="italic">A</text>
-      <text x="75" y="82" textAnchor="middle" fontFamily="Instrument Serif, serif" fontSize="26" fill="currentColor" fontStyle="italic">C</text>
-    </svg>
+    />
   );
 }
 
@@ -81,9 +113,8 @@ function SiteNav() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/85 backdrop-blur-md border-b border-foreground/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#top" className="flex items-center gap-3">
-          <SpacMark size={32} className="text-foreground" />
-          <span className="font-serif italic text-2xl tracking-tight">SPAC</span>
+        <a href="#top" className="flex items-center">
+          <SpacLogo variant="dark" className="h-9 md:h-10 w-auto" />
         </a>
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted">
           <a href="#quem-somos" className="hover:text-foreground transition-colors">Sócios</a>
@@ -92,7 +123,7 @@ function SiteNav() {
           <a href="#solucoes" className="hover:text-foreground transition-colors">Soluções</a>
           <a href="#case" className="hover:text-foreground transition-colors">Case</a>
         </div>
-        <a href="#contato" className="px-5 py-2.5 bg-foreground text-background text-[11px] uppercase tracking-widest font-semibold hover:bg-accent transition-colors">
+        <a href="#contato" className="px-5 py-2.5 bg-foreground text-background text-[11px] uppercase tracking-widest font-semibold hover:bg-accent-deep transition-colors">
           Fale com a SPAC
         </a>
       </div>
@@ -106,21 +137,21 @@ function Hero() {
   return (
     <header id="top" className="relative px-6 pt-24 pb-32 max-w-7xl mx-auto">
       <div className="max-w-5xl animate-fade-up">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6 block">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-6 block">
           Consultoria em Estratégia, Gestão e IA
         </span>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance mb-10">
-          Transformando <span className="italic text-accent">Sonhos</span> em Resultados.
+          Transformando <span className="italic text-accent-deep">Sonhos</span> em Resultados.
         </h1>
         <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed">
           Da formulação estratégica à execução no chão da operação — com tecnologia,
           IA aplicada, governança e quickwins que transformam empresas de médio e grande porte.
         </p>
         <div className="flex flex-wrap gap-6 items-center">
-          <a href="#contato" className="px-8 py-4 bg-foreground text-background text-xs uppercase tracking-[0.22em] font-bold hover:bg-accent transition-all">
+          <a href="#contato" className="px-8 py-4 bg-foreground text-background text-xs uppercase tracking-[0.22em] font-bold hover:bg-accent-deep transition-all">
             Agendar Conversa
           </a>
-          <a href="#metodologia" className="text-xs uppercase tracking-[0.22em] font-semibold border-b border-foreground/30 pb-1 hover:border-accent hover:text-accent transition-all">
+          <a href="#metodologia" className="text-xs uppercase tracking-[0.22em] font-semibold border-b border-foreground/30 pb-1 hover:border-accent-deep hover:text-accent-deep transition-all">
             Conhecer a Metodologia S.P.A.C.
           </a>
         </div>
@@ -129,7 +160,7 @@ function Hero() {
   );
 }
 
-/* ---------- PURPOSE (with background) ---------- */
+/* ---------- PURPOSE ---------- */
 
 function Purpose() {
   return (
@@ -137,9 +168,9 @@ function Purpose() {
       className="relative py-32 md:py-40 px-6 bg-cover bg-center"
       style={{ backgroundImage: `url(${purposeBg})` }}
     >
-      <div className="absolute inset-0 bg-dark/70" />
+      <div className="absolute inset-0 bg-dark/75" />
       <div className="relative max-w-5xl mx-auto text-center text-background">
-        <SpacMark size={56} className="mx-auto mb-10 text-accent opacity-90" />
+        <SpacLogo variant="light" className="h-16 md:h-20 w-auto mx-auto mb-10 opacity-95" />
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6 block">
           Propósito
         </span>
@@ -168,11 +199,11 @@ const founders = [
       "Trabalhos desenvolvidos em 4 países: Brasil, EUA, México e Peru",
     ],
     schools: [
-      { name: "Stanford", domain: "stanford.edu" },
-      { name: "USF", domain: "usf.edu" },
-      { name: "ESADE", domain: "esade.edu" },
-      { name: "UFMG", domain: "ufmg.br" },
-      { name: "FDC", domain: "fdc.org.br" },
+      { name: "Stanford", src: uniStanford },
+      { name: "University of South Florida", src: uniSouthFlorida },
+      { name: "ESADE", src: uniEsade },
+      { name: "UFMG", src: uniUfmg },
+      { name: "FDC", src: uniFdc },
     ],
   },
   {
@@ -189,58 +220,38 @@ const founders = [
       "+R$ 300 MM em ganhos de gestão implementados",
     ],
     schools: [
-      { name: "Harvard", domain: "hbs.edu" },
-      { name: "UFMG", domain: "ufmg.br" },
-      { name: "FDC", domain: "fdc.org.br" },
+      { name: "Harvard Business School", src: uniHarvard },
+      { name: "UFMG", src: uniUfmg },
+      { name: "FDC", src: uniFdc },
     ],
   },
 ];
-
-function LogoImg({ domain, name, className = "", dark = false }: { domain: string; name: string; className?: string; dark?: boolean }) {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return (
-      <span className={`inline-flex items-center px-3 py-1.5 text-[10px] uppercase tracking-wider border ${dark ? "border-white/20 text-white/70" : "border-foreground/15 text-foreground/70"} ${className}`}>
-        {name}
-      </span>
-    );
-  }
-  return (
-    <img
-      src={`https://logo.clearbit.com/${domain}`}
-      alt={name}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className={`h-8 md:h-9 w-auto object-contain ${dark ? "brightness-0 invert opacity-70" : "opacity-70"} ${className}`}
-    />
-  );
-}
 
 function Founders() {
   return (
     <section id="quem-somos" className="py-32 px-6 max-w-7xl mx-auto">
       <div className="max-w-2xl mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
           Quem somos
         </span>
         <h2 className="font-serif text-4xl md:text-5xl leading-tight">
           Sócios <span className="italic">Fundadores</span>
         </h2>
       </div>
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+      <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
         {founders.map((p) => (
           <article key={p.name}>
-            <div className="overflow-hidden mb-8 bg-foreground/5">
+            <div className="mb-6 flex justify-center md:justify-start">
               <img
                 src={p.photo}
                 alt={p.name}
-                width={1024}
-                height={1280}
+                width={600}
+                height={480}
                 loading="lazy"
-                className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full max-w-sm h-auto object-contain"
               />
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent mb-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-deep mb-3">
               {p.role}
             </div>
             <h3 className="font-serif text-3xl md:text-4xl mb-5">{p.name}</h3>
@@ -248,7 +259,7 @@ function Founders() {
             <ul className="space-y-2.5 mb-8">
               {p.bullets.map((b) => (
                 <li key={b} className="flex gap-3 text-sm leading-relaxed">
-                  <span className="text-accent mt-2 size-1 rounded-full bg-accent shrink-0"></span>
+                  <span className="text-accent-deep mt-2 size-1 rounded-full bg-accent-deep shrink-0"></span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -257,9 +268,19 @@ function Founders() {
               <div className="font-mono text-[9px] uppercase tracking-widest text-muted mb-4">
                 Formação
               </div>
-              <div className="flex flex-wrap gap-5 items-center">
+              <div className="flex flex-wrap gap-3 items-center">
                 {p.schools.map((s) => (
-                  <LogoImg key={s.name} domain={s.domain} name={s.name} />
+                  <div
+                    key={s.name}
+                    className="h-11 px-3 py-1.5 bg-white rounded-sm border border-foreground/10 flex items-center"
+                  >
+                    <img
+                      src={s.src}
+                      alt={s.name}
+                      className="h-full w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
@@ -313,44 +334,142 @@ function Values() {
   );
 }
 
-/* ---------- METHODOLOGY ---------- */
+/* ---------- METHODOLOGY (chamativa: circular S.P.A.C. diagram) ---------- */
 
 const spac = [
-  { letter: "S", word: "Sonhar", label: "Visão estratégica", desc: "Onde queremos chegar?" },
-  { letter: "P", word: "Planejar", label: "Objetivos tangíveis", desc: "Como vamos alcançar?" },
-  { letter: "A", word: "Agir", label: "Execução do plano", desc: "Como vamos operar?" },
-  { letter: "C", word: "Controlar", label: "Rituais de gestão", desc: "Alinhamento de rota." },
+  {
+    letter: "S",
+    word: "Sonhar",
+    label: "Visão Estratégica",
+    desc: "Onde queremos chegar? Definimos o sonho de longo prazo — ambição, proposta de valor e o horizonte que orienta cada decisão.",
+    angle: 225,
+  },
+  {
+    letter: "P",
+    word: "Planejar",
+    label: "Objetivos Tangíveis",
+    desc: "Como vamos alcançar? Traduzimos o sonho em projetos, metas metrificadas e uma matriz de priorização que cabe na sua realidade.",
+    angle: 315,
+  },
+  {
+    letter: "A",
+    word: "Agir",
+    label: "Execução do Plano",
+    desc: "Como vamos operar? Colocamos a mão na massa junto do seu time — do C-Level ao operacional — com quickwins e IA aplicada.",
+    angle: 45,
+  },
+  {
+    letter: "C",
+    word: "Controlar",
+    label: "Rituais de Gestão",
+    desc: "Alinhamento de rota. Indicadores, rituais e governança que mantêm o método vivo depois que a consultoria acaba.",
+    angle: 135,
+  },
 ];
 
 function Methodology() {
+  const [active, setActive] = useState(0);
+  const current = spac[active];
+
   return (
-    <section id="metodologia" className="py-32 px-6 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-16 items-center mb-20">
-        <div>
+    <section id="metodologia" className="relative py-32 px-6 bg-dark text-background overflow-hidden">
+      {/* subtle radial glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[900px] rounded-full bg-accent/10 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto">
+        <div className="max-w-3xl mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
             Nosso jeito de fazer
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl leading-tight">
-            Metodologia <span className="italic">S.P.A.C.</span>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
+            Metodologia <span className="italic text-accent">S.P.A.C.</span>
           </h2>
+          <p className="text-white/60 text-lg leading-relaxed">
+            Um método próprio, testado em bilhões em ganhos de gestão. Quatro etapas
+            que giram continuamente dentro da sua operação — sonho, plano, ação e controle.
+          </p>
         </div>
-        <SpacMark size={120} className="text-accent hidden md:block" />
-        <p className="text-muted text-lg leading-relaxed">
-          Um método que combina o sonho de longo prazo com a disciplina do dia a dia.
-          Cada letra é uma etapa — e todas rodam juntas, o tempo inteiro, dentro da sua operação.
-        </p>
-      </div>
-      <div className="grid md:grid-cols-4 gap-px bg-foreground/10">
-        {spac.map((s) => (
-          <div key={s.letter} className="bg-background p-10 min-h-[280px] flex flex-col">
-            <div className="font-serif text-7xl text-accent mb-6 leading-none">{s.letter}</div>
-            <h3 className="font-serif text-2xl mb-2">{s.word}</h3>
-            <div className="font-mono text-[9px] uppercase tracking-widest text-muted mb-4">
-              {s.label}
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+          {/* Circular diagram */}
+          <div className="relative aspect-square max-w-[520px] w-full mx-auto">
+            {/* Outer ring */}
+            <div className="absolute inset-0 rounded-full border border-white/10" />
+            <div className="absolute inset-8 rounded-full border border-accent/20 animate-spin-slow" style={{ animationDuration: "60s" }} />
+            <div className="absolute inset-16 rounded-full border border-white/5" />
+
+            {/* Center brand */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative flex flex-col items-center">
+                <div className="absolute size-40 rounded-full bg-accent/20 blur-2xl animate-pulse-glow" />
+                <SpacLogo variant="light" className="relative w-32 md:w-40 h-auto" />
+              </div>
             </div>
-            <p className="text-sm text-muted mt-auto">{s.desc}</p>
+
+            {/* Orbiting nodes */}
+            {spac.map((s, i) => {
+              const rad = (s.angle * Math.PI) / 180;
+              const r = 46; // percent from center
+              const x = 50 + r * Math.cos(rad);
+              const y = 50 + r * Math.sin(rad);
+              const isActive = i === active;
+              return (
+                <button
+                  key={s.letter}
+                  type="button"
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                  onClick={() => setActive(i)}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                >
+                  <div
+                    className={`relative size-24 md:size-28 rounded-full flex flex-col items-center justify-center border transition-all duration-500 ${
+                      isActive
+                        ? "bg-accent text-dark border-accent scale-110 shadow-xl shadow-accent/30"
+                        : "bg-dark/80 border-white/20 text-white hover:border-accent hover:scale-105"
+                    }`}
+                  >
+                    <span className={`font-serif text-4xl md:text-5xl leading-none ${isActive ? "text-dark" : "text-accent"}`}>
+                      {s.letter}
+                    </span>
+                    <span className={`font-mono text-[9px] uppercase tracking-widest mt-1 ${isActive ? "text-dark/80" : "text-white/60"}`}>
+                      {s.word}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
-        ))}
+
+          {/* Detail panel */}
+          <div className="min-h-[300px]">
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4">
+              Etapa 0{active + 1} · {current.label}
+            </div>
+            <h3 className="font-serif text-5xl md:text-6xl mb-2">
+              <span className="text-accent">{current.letter}</span>
+              <span className="text-white/40">.</span>
+            </h3>
+            <div className="font-serif text-3xl italic mb-6">{current.word}</div>
+            <p className="text-white/70 text-lg leading-relaxed mb-8">{current.desc}</p>
+            <div className="flex gap-2">
+              {spac.map((s, i) => (
+                <button
+                  key={s.letter}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  className={`h-1 flex-1 transition-all ${
+                    i === active ? "bg-accent" : "bg-white/15 hover:bg-white/30"
+                  }`}
+                  aria-label={`Ver etapa ${s.word}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -380,11 +499,11 @@ function WhatWeDo() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
       <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16 text-center mx-auto">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
             O que fazemos
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
-            Um portfólio completo de <span className="italic text-accent">transformação</span>.
+            Um portfólio completo de <span className="italic text-accent-deep">transformação</span>.
           </h2>
           <p className="text-muted text-lg leading-relaxed">
             Nove frentes de trabalho que atravessam toda a cadeia de valor da sua empresa.
@@ -397,7 +516,7 @@ function WhatWeDo() {
               className="bg-background p-8 md:p-10 group hover:bg-dark hover:text-background transition-all duration-500 cursor-default"
             >
               <div className="flex items-start justify-between mb-8">
-                <span className="font-mono text-xs text-accent">{item.n}</span>
+                <span className="font-mono text-xs text-accent-deep group-hover:text-accent">{item.n}</span>
                 <ArrowUpRight className="size-4 text-muted group-hover:text-accent group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
               </div>
               <h3 className="font-serif text-2xl md:text-3xl mb-2">{item.t}</h3>
@@ -410,49 +529,17 @@ function WhatWeDo() {
   );
 }
 
-/* ---------- SOLUTIONS (with icons, aquila-style) ---------- */
+/* ---------- SOLUTIONS ---------- */
 
 const solutions = [
-  {
-    icon: Compass,
-    t: "Estratégia e Planejamento",
-    d: "Proposta de valor, posicionamento, ambição metrificada, análise interna e externa, matriz de priorização e execução dos projetos estratégicos.",
-  },
-  {
-    icon: TrendingUp,
-    t: "Gestão Comercial",
-    d: "Funil de vendas, carteira, força de vendas, portfólio, canais, rituais, políticas de pricing, pós-vendas e remuneração variável.",
-  },
-  {
-    icon: Workflow,
-    t: "Gestão de Rotina e Processos",
-    d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão.",
-  },
-  {
-    icon: BarChart3,
-    t: "Indicadores e Metas",
-    d: "Cadeia de valor, variáveis-chave, metas em lucratividade, rentabilidade e crescimento com desdobramento e gestão de desvios.",
-  },
-  {
-    icon: Wallet,
-    t: "Capital Empregado",
-    d: "Compras, estoque e recebimento — os 3 pilares da necessidade de capital de giro com metas, plano de ação e rituais.",
-  },
-  {
-    icon: Receipt,
-    t: "Gestão de Despesas",
-    d: "Estudo de viabilidade de IA, gestão orçamentária, estrutura de pacotes, metas e acompanhamento do plano de ação.",
-  },
-  {
-    icon: Sprout,
-    t: "Growth",
-    d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes.",
-  },
-  {
-    icon: Globe,
-    t: "Digital",
-    d: "Estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L do negócio digital.",
-  },
+  { icon: Compass, t: "Estratégia e Planejamento", d: "Proposta de valor, posicionamento, ambição metrificada, análise interna e externa, matriz de priorização e execução dos projetos estratégicos." },
+  { icon: TrendingUp, t: "Gestão Comercial", d: "Funil de vendas, carteira, força de vendas, portfólio, canais, rituais, políticas de pricing, pós-vendas e remuneração variável." },
+  { icon: Workflow, t: "Gestão de Rotina e Processos", d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão." },
+  { icon: BarChart3, t: "Indicadores e Metas", d: "Cadeia de valor, variáveis-chave, metas em lucratividade, rentabilidade e crescimento com desdobramento e gestão de desvios." },
+  { icon: Wallet, t: "Capital Empregado", d: "Compras, estoque e recebimento — os 3 pilares da necessidade de capital de giro com metas, plano de ação e rituais." },
+  { icon: Receipt, t: "Gestão de Despesas", d: "Estudo de viabilidade de IA, gestão orçamentária, estrutura de pacotes, metas e acompanhamento do plano de ação." },
+  { icon: Sprout, t: "Growth", d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes." },
+  { icon: Globe, t: "Digital", d: "Estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L do negócio digital." },
 ];
 
 function Solutions() {
@@ -460,7 +547,7 @@ function Solutions() {
     <section id="solucoes" className="bg-white/50 border-y border-foreground/5 py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
             Soluções
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight">
@@ -468,9 +555,9 @@ function Solutions() {
           </h2>
           <p className="text-muted mt-6 text-lg leading-relaxed">
             Toda solução carrega três marcas registradas da SPAC:
-            <span className="text-accent"> tecnologia e IA</span>,
-            <span className="text-accent"> governança</span> e
-            <span className="text-accent"> quickwins</span>.
+            <span className="text-accent-deep"> tecnologia e IA</span>,
+            <span className="text-accent-deep"> governança</span> e
+            <span className="text-accent-deep"> quickwins</span>.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -479,9 +566,9 @@ function Solutions() {
             return (
               <div
                 key={s.t}
-                className="group relative bg-background p-8 border border-foreground/10 hover:border-accent hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-500"
+                className="group relative bg-background p-8 border border-foreground/10 hover:border-accent hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="mb-8 inline-flex items-center justify-center size-14 border border-accent/30 bg-accent/5 text-accent group-hover:bg-accent group-hover:text-background transition-all">
+                <div className="mb-8 inline-flex items-center justify-center size-14 border border-accent-deep/30 bg-accent/10 text-accent-deep group-hover:bg-accent-deep group-hover:text-background transition-all">
                   <Icon className="size-6" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-serif text-2xl mb-3 leading-tight">{s.t}</h3>
@@ -497,41 +584,46 @@ function Solutions() {
 
 /* ---------- CLIENTS (marquee grayscale → color) ---------- */
 
-const clients = [
-  { name: "ABC", domain: "abcalgar.com.br" },
-  { name: "Grupo Zelo", domain: "grupozelo.com" },
-  { name: "Apoio Mineiro", domain: "apoiomineiro.com.br" },
-  { name: "Nagumo", domain: "nagumo.com.br" },
-  { name: "Banana Brasil", domain: "bananabrasil.com.br" },
-  { name: "Angus", domain: "angus.com.br" },
-  { name: "BORA", domain: "bora.com.br" },
-  { name: "Grupo Dec", domain: "decdistribuidora.com.br" },
-  { name: "Big Box", domain: "bigbox.com.br" },
-  { name: "Supernosso", domain: "supernosso.com" },
-  { name: "Be Honest", domain: "behonest.com.br" },
-  { name: "Macré", domain: "macre.com.br" },
-  { name: "Orgânico do Chico", domain: "organicodochico.com.br" },
-  { name: "Terral", domain: "terral.agr.br" },
-  { name: "Supermercados REX", domain: "rexsupermercados.com.br" },
-  { name: "Interweg Seguros", domain: "interwegseguros.com.br" },
+const clients: { name: string; src: string }[] = [
+  { name: "ABC", src: clAbc },
+  { name: "Grupo Zelo", src: clZelo },
+  { name: "Apoio Mineiro", src: clApoio },
+  { name: "Supermercados Nagumo", src: clNagumo },
+  { name: "Banana Brasil", src: clBanana },
+  { name: "Angus Supernosso", src: clAngus },
+  { name: "BORA", src: clBora },
+  { name: "Grupo DEC Minas", src: clDecminas },
+  { name: "Big Box", src: clBigbox },
+  { name: "Supernosso", src: clSupernosso },
+  { name: "Be Honest", src: clBehonest },
+  { name: "Macré", src: clMacre },
+  { name: "Orgânico do Chico", src: clOrganico },
+  { name: "Terral", src: clTerral },
+  { name: "Aeris", src: clAeris },
+  { name: "Nyrstar", src: clNyrstar },
+  { name: "Faculdade Milton Campos", src: clMilton },
+  { name: "NetService", src: clNetservice },
+  { name: "Raro's", src: clRaros },
+  { name: "Fazenda Conforto", src: clFazenda },
+  { name: "Hospital da Baleia", src: clBaleia },
+  { name: "Supermercados REX", src: "" },
+  { name: "Interweg Seguros", src: "" },
 ];
 
-function ClientLogo({ name, domain }: { name: string; domain: string }) {
-  const [failed, setFailed] = useState(false);
+function ClientLogo({ name, src }: { name: string; src: string }) {
   return (
-    <div className="shrink-0 w-44 md:w-56 h-24 md:h-28 mx-6 flex items-center justify-center border border-foreground/10 bg-background/50">
-      {failed ? (
-        <span className="font-serif text-lg md:text-xl text-foreground/70 grayscale hover:grayscale-0 transition-all">
-          {name}
-        </span>
-      ) : (
+    <div className="shrink-0 w-44 md:w-56 h-24 md:h-28 mx-4 flex items-center justify-center bg-white border border-foreground/10">
+      {src ? (
         <img
-          src={`https://logo.clearbit.com/${domain}`}
+          src={src}
           alt={name}
           loading="lazy"
-          onError={() => setFailed(true)}
-          className="max-h-14 md:max-h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+          className="max-h-16 md:max-h-20 max-w-[80%] w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
         />
+      ) : (
+        <span className="font-serif text-lg md:text-xl text-foreground/60 hover:text-foreground transition-all text-center px-3">
+          {name}
+        </span>
       )}
     </div>
   );
@@ -540,11 +632,11 @@ function ClientLogo({ name, domain }: { name: string; domain: string }) {
 function Clients() {
   const loop = [...clients, ...clients];
   return (
-    <section className="py-24 border-b border-foreground/5 overflow-hidden">
+    <section className="py-24 border-b border-foreground/5 overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <div className="flex justify-between items-end gap-8 flex-wrap">
           <div>
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
               Onde fizemos
             </span>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight">
@@ -561,7 +653,7 @@ function Clients() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
           {loop.map((c, i) => (
-            <ClientLogo key={`${c.name}-${i}`} name={c.name} domain={c.domain} />
+            <ClientLogo key={`${c.name}-${i}`} name={c.name} src={c.src} />
           ))}
         </div>
       </div>
@@ -627,19 +719,19 @@ const quotes = [
     q: "O trabalho foi excelente no Grupo Supernosso, contribuiu ativamente à gestão e transformação da empresa, não só em processos e gestão tradicional, mas também em inovação com marketing, CRM e digital. Recomendo muito!",
     n: "Rodolfo Nejm",
     r: "Vice Presidente e acionista — Grupo Supernosso",
-    img: insight1,
+    img: depoRodolfo,
   },
   {
     q: "Augusto é uma pessoa que sempre abraçou muito as parcerias de negócio, trazendo soluções e pensando em como ajudar o business. É um profissional extremamente capacitado e preparado!",
     n: "Karina Arcuri",
     r: "Diretora de E-commerce e CRM — AMBEV",
-    img: insight2,
+    img: depoKarina,
   },
   {
     q: "A Expand teve sua gestão transformada em apenas 6 meses de trabalho. Os resultados de crescimento de faturamento e lucro falam por si só, e a maturidade da equipe evoluiu muito.",
     n: "Felipe Lourenço",
     r: "Sócio Fundador — Expand Bebidas",
-    img: insight3,
+    img: depoFelipe,
   },
 ];
 
@@ -647,7 +739,7 @@ function Testimonials() {
   return (
     <section id="depoimentos" className="py-32 px-6 max-w-7xl mx-auto">
       <div className="max-w-2xl mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
           Depoimentos
         </span>
         <h2 className="font-serif text-4xl md:text-5xl leading-tight">
@@ -656,24 +748,26 @@ function Testimonials() {
       </div>
       <div className="grid md:grid-cols-3 gap-10 md:gap-12">
         {quotes.map((q) => (
-          <article key={q.n} className="flex flex-col">
-            <div className="overflow-hidden mb-8">
-              <img
-                src={q.img}
-                alt={q.n}
-                width={800}
-                height={800}
-                loading="lazy"
-                className="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
+          <article key={q.n} className="flex flex-col bg-white p-8 md:p-10 border border-foreground/10 shadow-sm">
+            <div className="flex items-center gap-5 mb-6">
+              <div className="size-20 rounded-full overflow-hidden ring-2 ring-accent shrink-0 bg-foreground/5">
+                <img
+                  src={q.img}
+                  alt={q.n}
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="font-serif text-xl leading-tight">{q.n}</div>
+                <div className="text-[11px] text-muted uppercase tracking-widest mt-1 leading-snug">{q.r}</div>
+              </div>
             </div>
-            <blockquote className="font-serif text-xl italic leading-snug mb-6">
+            <blockquote className="font-serif text-lg italic leading-snug text-foreground/85">
               “{q.q}”
             </blockquote>
-            <div className="mt-auto">
-              <div className="text-sm font-semibold">{q.n}</div>
-              <div className="text-[11px] text-muted uppercase tracking-widest mt-1">{q.r}</div>
-            </div>
           </article>
         ))}
       </div>
@@ -685,11 +779,11 @@ function Testimonials() {
 
 function CTASection() {
   return (
-    <section id="contato" className="py-32 px-6 bg-accent/5 border-t border-foreground/5">
+    <section id="contato" className="py-32 px-6 bg-accent/10 border-t border-foreground/5">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
-          <SpacMark size={48} className="mx-auto mb-8 text-accent" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6 block">
+          <SpacLogo variant="dark" className="h-14 md:h-16 w-auto mx-auto mb-8" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-6 block">
             Fale com a SPAC
           </span>
           <h2 className="font-serif text-4xl md:text-6xl mb-6 leading-tight">
@@ -738,7 +832,7 @@ function CTASection() {
             <input type="text" placeholder="Empresa e cargo" className="border-b border-foreground/15 py-3 text-sm focus:border-accent outline-hidden bg-transparent" />
             <input type="text" placeholder="Faturamento anual aproximado" className="border-b border-foreground/15 py-3 text-sm focus:border-accent outline-hidden bg-transparent" />
             <textarea placeholder="Qual desafio você quer resolver?" rows={3} className="border-b border-foreground/15 py-3 text-sm focus:border-accent outline-hidden bg-transparent resize-none" />
-            <button type="submit" className="w-full py-5 bg-foreground text-background text-xs uppercase tracking-[0.3em] font-bold mt-2 hover:bg-accent transition-all">
+            <button type="submit" className="w-full py-5 bg-foreground text-background text-xs uppercase tracking-[0.3em] font-bold mt-2 hover:bg-accent-deep transition-all">
               Solicitar Conversa
             </button>
           </form>
@@ -752,31 +846,28 @@ function CTASection() {
 
 function SiteFooter() {
   return (
-    <footer className="py-20 px-6 border-t border-foreground/5">
+    <footer className="py-20 px-6 border-t border-foreground/5 bg-dark text-background">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="max-w-sm">
-          <div className="flex items-center gap-3 mb-4">
-            <SpacMark size={36} className="text-foreground" />
-            <div className="font-serif italic text-3xl">SPAC</div>
-          </div>
-          <p className="text-muted text-sm leading-relaxed mb-6">
+          <SpacLogo variant="light" className="h-12 w-auto mb-6" />
+          <p className="text-white/60 text-sm leading-relaxed mb-6">
             Transformando sonhos em resultados.
           </p>
-          <p className="text-muted text-[11px] uppercase tracking-widest">
+          <p className="text-accent text-[11px] uppercase tracking-widest">
             Estratégia · Gestão · Inteligência Artificial
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-16">
           <div>
-            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6">Contato</h5>
-            <ul className="text-xs text-muted space-y-2">
+            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6 text-accent">Contato</h5>
+            <ul className="text-xs text-white/60 space-y-2">
               <li><a href="mailto:augusto@spacgestao.com" className="hover:text-accent">augusto@spacgestao.com</a></li>
               <li><a href="https://wa.me/5531995552638" className="hover:text-accent">+55 31 9 9555-2638</a></li>
             </ul>
           </div>
           <div>
-            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6">Navegar</h5>
-            <ul className="text-xs text-muted space-y-2">
+            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6 text-accent">Navegar</h5>
+            <ul className="text-xs text-white/60 space-y-2">
               <li><a href="#quem-somos" className="hover:text-accent">Sócios</a></li>
               <li><a href="#metodologia" className="hover:text-accent">Metodologia</a></li>
               <li><a href="#solucoes" className="hover:text-accent">Soluções</a></li>
@@ -784,15 +875,15 @@ function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6">Legal</h5>
-            <ul className="text-xs text-muted space-y-2">
+            <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6 text-accent">Legal</h5>
+            <ul className="text-xs text-white/60 space-y-2">
               <li>Privacidade</li>
               <li>Termos</li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-foreground/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-muted uppercase tracking-[0.2em]">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-white/40 uppercase tracking-[0.2em]">
         <span>© 2026 SPAC Gestão · Todos os direitos reservados</span>
         <span>Tecnologia · Governança · Quickwins</span>
       </div>
