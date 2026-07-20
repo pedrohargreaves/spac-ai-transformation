@@ -9,7 +9,9 @@ import {
   Receipt,
   Sprout,
   Globe,
-  ArrowUpRight,
+  Sparkles,
+  UserCheck,
+  Gauge,
 } from "lucide-react";
 import purposeBg from "@/assets/purpose-bg.jpg";
 import servicesBg from "@/assets/services-bg.jpg";
@@ -96,9 +98,10 @@ function Home() {
       <Hero />
       <Purpose />
       <Founders />
+      <SeniorTeam />
       <Values />
       <Methodology />
-      <WhatWeDo />
+      <Differentiators />
       <Solutions />
       <Clients />
       <CaseSupernosso />
@@ -112,14 +115,14 @@ function Home() {
 function SiteNav() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/85 backdrop-blur-md border-b border-foreground/5">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         <a href="#top" className="flex items-center">
-          <SpacLogo variant="dark" className="h-9 md:h-10 w-auto" />
+          <SpacLogo variant="dark" className="h-14 md:h-16 w-auto" />
         </a>
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted">
           <a href="#quem-somos" className="hover:text-foreground transition-colors">Sócios</a>
           <a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a>
-          <a href="#o-que-fazemos" className="hover:text-foreground transition-colors">O que Fazemos</a>
+          <a href="#diferenciais" className="hover:text-foreground transition-colors">Diferenciais</a>
           <a href="#solucoes" className="hover:text-foreground transition-colors">Soluções</a>
           <a href="#case" className="hover:text-foreground transition-colors">Case</a>
         </div>
@@ -138,21 +141,21 @@ function Hero() {
     <header id="top" className="relative px-6 pt-24 pb-32 max-w-7xl mx-auto">
       <div className="max-w-5xl animate-fade-up">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-6 block">
-          Consultoria em Estratégia, Gestão e IA
+          Consultoria em Gestão e Estratégia utilizando IA de forma eficiente
         </span>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance mb-10">
           Transformando <span className="italic text-accent-deep">Sonhos</span> em Resultados.
         </h1>
         <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed">
-          Da formulação estratégica à execução no chão da operação — com tecnologia,
-          IA aplicada, governança e quickwins que transformam empresas de médio e grande porte.
+          Da formulação estratégica à execução — com tecnologia, IA aplicada,
+          governança e quickwins que transformam empresas de médio e grande porte.
         </p>
         <div className="flex flex-wrap gap-6 items-center">
           <a href="#contato" className="px-8 py-4 bg-foreground text-background text-xs uppercase tracking-[0.22em] font-bold hover:bg-accent-deep transition-all">
             Agendar Conversa
           </a>
           <a href="#metodologia" className="text-xs uppercase tracking-[0.22em] font-semibold border-b border-foreground/30 pb-1 hover:border-accent-deep hover:text-accent-deep transition-all">
-            Conhecer a Metodologia S.P.A.C.
+            Conhecer a Metodologia SPAC
           </a>
         </div>
       </div>
@@ -168,14 +171,18 @@ function Purpose() {
       className="relative py-32 md:py-40 px-6 bg-cover bg-center"
       style={{ backgroundImage: `url(${purposeBg})` }}
     >
-      <div className="absolute inset-0 bg-dark/75" />
+      <div className="absolute inset-0 bg-dark/80" />
       <div className="relative max-w-5xl mx-auto text-center text-background">
         <SpacLogo variant="light" className="h-16 md:h-20 w-auto mx-auto mb-10 opacity-95" />
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6 block">
           Propósito
         </span>
-        <p className="font-serif text-3xl md:text-5xl leading-tight italic text-balance">
+        <p className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] italic text-balance mb-14">
           “Democratizar a transformação para todos que querem fazer a diferença.”
+        </p>
+        <div className="w-16 h-px bg-accent/50 mx-auto mb-10" />
+        <p className="font-serif text-2xl md:text-3xl italic text-white/85 leading-snug max-w-3xl mx-auto">
+          Unimos <span className="text-accent">sonho</span> e visão de longo prazo com controle e gestão no curto prazo.
         </p>
       </div>
     </section>
@@ -326,9 +333,6 @@ function Values() {
             </div>
           ))}
         </div>
-        <p className="relative mt-16 max-w-3xl font-serif text-2xl md:text-3xl italic text-white/85 leading-snug">
-          Unimos <span className="text-accent">sonho</span> e visão de longo prazo com controle e gestão no curto prazo.
-        </p>
       </div>
     </section>
   );
@@ -381,14 +385,14 @@ function Methodology() {
       <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
-            Nosso jeito de fazer
+            Um método próprio que já gerou bilhões em ganhos
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
-            Metodologia <span className="italic text-accent">S.P.A.C.</span>
+            Metodologia <span className="italic text-accent">SPAC</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed">
-            Um método próprio, testado em bilhões em ganhos de gestão. Quatro etapas
-            que giram continuamente dentro da sua operação — sonho, plano, ação e controle.
+            Atestado em portfólio — quatro etapas que giram continuamente dentro
+            da sua operação: sonho, plano, ação e controle.
           </p>
         </div>
 
@@ -451,7 +455,6 @@ function Methodology() {
             </div>
             <h3 className="font-serif text-5xl md:text-6xl mb-2">
               <span className="text-accent">{current.letter}</span>
-              <span className="text-white/40">.</span>
             </h3>
             <div className="font-serif text-3xl italic mb-6">{current.word}</div>
             <p className="text-white/70 text-lg leading-relaxed mb-8">{current.desc}</p>
@@ -475,54 +478,101 @@ function Methodology() {
   );
 }
 
-/* ---------- WHAT WE DO ---------- */
+/* ---------- SENIOR TEAM ---------- */
 
-const whatWeDo = [
-  { n: "01", t: "Identidade", d: "Propósito, Missão e Valores" },
-  { n: "02", t: "Estratégia", d: "Formulação, Planejamento e Execução" },
-  { n: "03", t: "Digital", d: "E-commerce, Retail Media e CRM" },
-  { n: "04", t: "Metas", d: "Alinhamento e Desdobramento" },
-  { n: "05", t: "Growth", d: "Aquisição, Retenção e LTV" },
-  { n: "06", t: "Gestão Comercial", d: "Funil, Força de Vendas e Pricing" },
-  { n: "07", t: "Financeira e M&A", d: "Capital, Fusões e Aquisições" },
-  { n: "08", t: "Gestão de Gastos", d: "Orçamento e Eficiência" },
-  { n: "09", t: "Processos", d: "Rotina, IA e Padronização" },
+function SeniorTeam() {
+  return (
+    <section className="py-24 px-6 bg-white/40 border-y border-foreground/5">
+      <div className="max-w-5xl mx-auto text-center">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-5 block">
+          Nossa Equipe
+        </span>
+        <h2 className="font-serif text-3xl md:text-5xl leading-tight mb-6">
+          Consultores <span className="italic text-accent-deep">Sêniors</span> especialistas,
+          com mais de <span className="italic text-accent-deep">15 anos</span> de experiência.
+        </h2>
+        <p className="text-muted text-lg leading-relaxed max-w-3xl mx-auto">
+          Cada projeto é conduzido por líderes que já ocuparam cadeiras de C-Level em empresas
+          bilionárias. Zero júnior aprendendo no seu negócio — apenas quem já transformou.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- DIFFERENTIATORS ---------- */
+
+const differentiators = [
+  {
+    icon: Sparkles,
+    t: "IA aplicada em cada projeto",
+    d: "Não é buzzword. Utilizamos IA para acelerar diagnósticos, automatizar rotinas e desenhar processos mais eficientes — do C-Level ao operacional.",
+  },
+  {
+    icon: UserCheck,
+    t: "Só sêniors no seu projeto",
+    d: "Enquanto grandes consultorias mandam times juniores aprendendo no seu bolso, na SPAC quem entrega é quem já esteve na cadeira do CEO, CFO e CMO.",
+  },
+  {
+    icon: Gauge,
+    t: "Preço justo, execução profunda",
+    d: "Estrutura enxuta e método próprio — entregamos o rigor das top-tier globais sem o custo delas. Mão na massa, quickwins e resultado que aparece no P&L.",
+  },
 ];
 
-function WhatWeDo() {
+function Differentiators() {
   return (
-    <section id="o-que-fazemos" className="relative py-32 px-6 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
-        style={{ backgroundImage: `url(${servicesBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+    <section id="diferenciais" className="relative py-32 px-6 bg-dark text-background overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 size-[500px] rounded-full bg-accent/10 blur-3xl" />
+      </div>
       <div className="relative max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-16 text-center mx-auto">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
-            O que fazemos
+        <div className="max-w-3xl mb-16">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
+            Por que SPAC
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
-            Um portfólio completo de <span className="italic text-accent-deep">transformação</span>.
+            A diferença entre uma consultoria comum
+            <span className="italic text-accent"> e uma transformação real</span>.
           </h2>
-          <p className="text-muted text-lg leading-relaxed">
-            Nove frentes de trabalho que atravessam toda a cadeia de valor da sua empresa.
+          <p className="text-white/60 text-lg leading-relaxed">
+            O mercado se divide entre grandes casas caríssimas com times juniores e boutiques
+            sem método. Fizemos o oposto: sêniors, método próprio e IA em todo projeto.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10">
-          {whatWeDo.map((item) => (
-            <div
-              key={item.n}
-              className="bg-background p-8 md:p-10 group hover:bg-dark hover:text-background transition-all duration-500 cursor-default"
-            >
-              <div className="flex items-start justify-between mb-8">
-                <span className="font-mono text-xs text-accent-deep group-hover:text-accent">{item.n}</span>
-                <ArrowUpRight className="size-4 text-muted group-hover:text-accent group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
+
+        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+          {differentiators.map((d, i) => {
+            const Icon = d.icon;
+            return (
+              <div key={d.t} className="bg-dark p-10 md:p-12 group hover:bg-accent/5 transition-colors">
+                <div className="flex items-start justify-between mb-8">
+                  <div className="inline-flex items-center justify-center size-14 border border-accent/40 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
+                    <Icon className="size-6" strokeWidth={1.5} />
+                  </div>
+                  <span className="font-mono text-xs text-accent/70">0{i + 1}</span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">{d.t}</h3>
+                <p className="text-white/65 leading-relaxed text-sm">{d.d}</p>
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl mb-2">{item.t}</h3>
-              <p className="text-sm text-muted group-hover:text-white/60 transition-colors">{item.d}</p>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Comparison strip */}
+        <div className="mt-16 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 text-sm">
+          <div className="bg-dark p-8">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">Big Four & Top-tier</div>
+            <p className="text-white/70 leading-relaxed">Metodologia sólida, mas <span className="text-white line-through decoration-accent/60">time júnior</span> aprendendo no seu projeto — a preços proibitivos.</p>
+          </div>
+          <div className="bg-dark p-8">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">Boutiques &amp; freelas</div>
+            <p className="text-white/70 leading-relaxed">Sêniors experientes, mas <span className="text-white line-through decoration-accent/60">sem método</span> replicável nem tecnologia — cada projeto é do zero.</p>
+          </div>
+          <div className="bg-accent/10 p-8 border border-accent/30">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">SPAC</div>
+            <p className="text-white leading-relaxed">Sêniors + método próprio SPAC + IA aplicada — na cadeira do C-Level, com preço que cabe na sua empresa.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -533,13 +583,13 @@ function WhatWeDo() {
 
 const solutions = [
   { icon: Compass, t: "Estratégia e Planejamento", d: "Proposta de valor, posicionamento, ambição metrificada, análise interna e externa, matriz de priorização e execução dos projetos estratégicos." },
-  { icon: TrendingUp, t: "Gestão Comercial", d: "Funil de vendas, carteira, força de vendas, portfólio, canais, rituais, políticas de pricing, pós-vendas e remuneração variável." },
-  { icon: Workflow, t: "Gestão de Rotina e Processos", d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão." },
+  { icon: Globe, t: "Digital", d: "Estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L do negócio digital." },
   { icon: BarChart3, t: "Indicadores e Metas", d: "Cadeia de valor, variáveis-chave, metas em lucratividade, rentabilidade e crescimento com desdobramento e gestão de desvios." },
+  { icon: Sprout, t: "Growth", d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes." },
+  { icon: TrendingUp, t: "Gestão Comercial", d: "Funil de vendas, carteira, força de vendas, portfólio, canais, rituais, políticas de pricing, pós-vendas e remuneração variável." },
   { icon: Wallet, t: "Capital Empregado", d: "Compras, estoque e recebimento — os 3 pilares da necessidade de capital de giro com metas, plano de ação e rituais." },
   { icon: Receipt, t: "Gestão de Despesas", d: "Estudo de viabilidade de IA, gestão orçamentária, estrutura de pacotes, metas e acompanhamento do plano de ação." },
-  { icon: Sprout, t: "Growth", d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes." },
-  { icon: Globe, t: "Digital", d: "Estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L do negócio digital." },
+  { icon: Workflow, t: "Gestão de Rotina e Processos", d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão." },
 ];
 
 function Solutions() {
@@ -548,10 +598,10 @@ function Solutions() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-4 block">
-            Soluções
+            Nossas Soluções
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight">
-            Oito frentes, um único <span className="italic">método</span>.
+            Oito frentes, um <span className="italic">único método</span>.
           </h2>
           <p className="text-muted mt-6 text-lg leading-relaxed">
             Toda solução carrega três marcas registradas da SPAC:
@@ -561,15 +611,18 @@ function Solutions() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {solutions.map((s) => {
+          {solutions.map((s, i) => {
             const Icon = s.icon;
             return (
               <div
                 key={s.t}
                 className="group relative bg-background p-8 border border-foreground/10 hover:border-accent hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="mb-8 inline-flex items-center justify-center size-14 border border-accent-deep/30 bg-accent/10 text-accent-deep group-hover:bg-accent-deep group-hover:text-background transition-all">
-                  <Icon className="size-6" strokeWidth={1.5} />
+                <div className="flex items-start justify-between mb-8">
+                  <div className="inline-flex items-center justify-center size-14 border border-accent-deep/30 bg-accent/10 text-accent-deep group-hover:bg-accent-deep group-hover:text-background transition-all">
+                    <Icon className="size-6" strokeWidth={1.5} />
+                  </div>
+                  <span className="font-mono text-[10px] text-muted">0{i + 1}</span>
                 </div>
                 <h3 className="font-serif text-2xl mb-3 leading-tight">{s.t}</h3>
                 <p className="text-sm text-muted leading-relaxed">{s.d}</p>
@@ -808,8 +861,8 @@ function CTASection() {
             <div className="space-y-5 text-sm">
               <div>
                 <div className="text-[10px] uppercase tracking-widest text-white/40 mb-1">E-mail</div>
-                <a href="mailto:augusto@spacgestao.com" className="hover:text-accent transition-colors">
-                  augusto@spacgestao.com
+                <a href="mailto:contato@spacgestao.com" className="hover:text-accent transition-colors">
+                  contato@spacgestao.com
                 </a>
               </div>
               <div>
@@ -861,7 +914,7 @@ function SiteFooter() {
           <div>
             <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6 text-accent">Contato</h5>
             <ul className="text-xs text-white/60 space-y-2">
-              <li><a href="mailto:augusto@spacgestao.com" className="hover:text-accent">augusto@spacgestao.com</a></li>
+              <li><a href="mailto:contato@spacgestao.com" className="hover:text-accent">contato@spacgestao.com</a></li>
               <li><a href="https://wa.me/5531995552638" className="hover:text-accent">+55 31 9 9555-2638</a></li>
             </ul>
           </div>
