@@ -115,14 +115,14 @@ function Home() {
 function SiteNav() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/85 backdrop-blur-md border-b border-foreground/5">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         <a href="#top" className="flex items-center">
-          <SpacLogo variant="dark" className="h-9 md:h-10 w-auto" />
+          <SpacLogo variant="dark" className="h-14 md:h-16 w-auto" />
         </a>
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted">
           <a href="#quem-somos" className="hover:text-foreground transition-colors">Sócios</a>
           <a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a>
-          <a href="#o-que-fazemos" className="hover:text-foreground transition-colors">O que Fazemos</a>
+          <a href="#diferenciais" className="hover:text-foreground transition-colors">Diferenciais</a>
           <a href="#solucoes" className="hover:text-foreground transition-colors">Soluções</a>
           <a href="#case" className="hover:text-foreground transition-colors">Case</a>
         </div>
