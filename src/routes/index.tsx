@@ -333,9 +333,6 @@ function Values() {
             </div>
           ))}
         </div>
-        <p className="relative mt-16 max-w-3xl font-serif text-2xl md:text-3xl italic text-white/85 leading-snug">
-          Unimos <span className="text-accent">sonho</span> e visão de longo prazo com controle e gestão no curto prazo.
-        </p>
       </div>
     </section>
   );
