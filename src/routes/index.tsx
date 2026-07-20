@@ -861,8 +861,8 @@ function CTASection() {
             <div className="space-y-5 text-sm">
               <div>
                 <div className="text-[10px] uppercase tracking-widest text-white/40 mb-1">E-mail</div>
-                <a href="mailto:augusto@spacgestao.com" className="hover:text-accent transition-colors">
-                  augusto@spacgestao.com
+                <a href="mailto:contato@spacgestao.com" className="hover:text-accent transition-colors">
+                  contato@spacgestao.com
                 </a>
               </div>
               <div>
