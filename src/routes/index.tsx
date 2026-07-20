@@ -141,21 +141,21 @@ function Hero() {
     <header id="top" className="relative px-6 pt-24 pb-32 max-w-7xl mx-auto">
       <div className="max-w-5xl animate-fade-up">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-deep mb-6 block">
-          Consultoria em Estratégia, Gestão e IA
+          Consultoria em Gestão e Estratégia utilizando IA de forma eficiente
         </span>
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance mb-10">
           Transformando <span className="italic text-accent-deep">Sonhos</span> em Resultados.
         </h1>
         <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed">
-          Da formulação estratégica à execução no chão da operação — com tecnologia,
-          IA aplicada, governança e quickwins que transformam empresas de médio e grande porte.
+          Da formulação estratégica à execução — com tecnologia, IA aplicada,
+          governança e quickwins que transformam empresas de médio e grande porte.
         </p>
         <div className="flex flex-wrap gap-6 items-center">
           <a href="#contato" className="px-8 py-4 bg-foreground text-background text-xs uppercase tracking-[0.22em] font-bold hover:bg-accent-deep transition-all">
             Agendar Conversa
           </a>
           <a href="#metodologia" className="text-xs uppercase tracking-[0.22em] font-semibold border-b border-foreground/30 pb-1 hover:border-accent-deep hover:text-accent-deep transition-all">
-            Conhecer a Metodologia S.P.A.C.
+            Conhecer a Metodologia SPAC
           </a>
         </div>
       </div>
