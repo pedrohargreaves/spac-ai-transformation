@@ -385,14 +385,14 @@ function Methodology() {
       <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
-            Nosso jeito de fazer
+            Um método próprio que já gerou bilhões em ganhos
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
-            Metodologia <span className="italic text-accent">S.P.A.C.</span>
+            Metodologia <span className="italic text-accent">SPAC</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed">
-            Um método próprio, testado em bilhões em ganhos de gestão. Quatro etapas
-            que giram continuamente dentro da sua operação — sonho, plano, ação e controle.
+            Atestado em portfólio — quatro etapas que giram continuamente dentro
+            da sua operação: sonho, plano, ação e controle.
           </p>
         </div>
 
