@@ -455,7 +455,6 @@ function Methodology() {
             </div>
             <h3 className="font-serif text-5xl md:text-6xl mb-2">
               <span className="text-accent">{current.letter}</span>
-              <span className="text-white/40">.</span>
             </h3>
             <div className="font-serif text-3xl italic mb-6">{current.word}</div>
             <p className="text-white/70 text-lg leading-relaxed mb-8">{current.desc}</p>
