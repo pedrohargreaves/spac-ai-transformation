@@ -98,9 +98,10 @@ function Home() {
       <Hero />
       <Purpose />
       <Founders />
+      <SeniorTeam />
       <Values />
       <Methodology />
-      <WhatWeDo />
+      <Differentiators />
       <Solutions />
       <Clients />
       <CaseSupernosso />
