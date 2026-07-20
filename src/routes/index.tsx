@@ -9,7 +9,9 @@ import {
   Receipt,
   Sprout,
   Globe,
-  ArrowUpRight,
+  Sparkles,
+  UserCheck,
+  Gauge,
 } from "lucide-react";
 import purposeBg from "@/assets/purpose-bg.jpg";
 import servicesBg from "@/assets/services-bg.jpg";
