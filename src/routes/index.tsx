@@ -914,7 +914,7 @@ function SiteFooter() {
           <div>
             <h5 className="text-[10px] font-bold uppercase tracking-widest mb-6 text-accent">Contato</h5>
             <ul className="text-xs text-white/60 space-y-2">
-              <li><a href="mailto:augusto@spacgestao.com" className="hover:text-accent">augusto@spacgestao.com</a></li>
+              <li><a href="mailto:contato@spacgestao.com" className="hover:text-accent">contato@spacgestao.com</a></li>
               <li><a href="https://wa.me/5531995552638" className="hover:text-accent">+55 31 9 9555-2638</a></li>
             </ul>
           </div>
