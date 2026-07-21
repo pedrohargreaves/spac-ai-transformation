@@ -97,10 +97,10 @@ function Home() {
       <SiteNav />
       <Hero />
       <Purpose />
+      <Methodology />
       <Founders />
       <SeniorTeam />
       <Values />
-      <Methodology />
       <Differentiators />
       <Solutions />
       <Clients />
@@ -173,17 +173,17 @@ function Hero() {
 function Purpose() {
   return (
     <section
-      className="relative py-32 md:py-40 px-6 bg-cover bg-center"
+      className="relative py-32 md:py-44 px-6 bg-cover bg-center"
       style={{ backgroundImage: `url(${purposeBg})` }}
     >
       <div className="absolute inset-0 bg-dark/80" />
-      <div className="relative max-w-5xl mx-auto text-center text-background">
-        <SpacLogo variant="light" className="h-16 md:h-20 w-auto mx-auto mb-10 opacity-95" />
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6 block">
+      <div className="relative max-w-6xl mx-auto text-center text-background">
+        <SpacLogo variant="light" className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-12 opacity-100" />
+        <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-accent mb-8 block">
           Propósito
         </span>
-        <p className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] italic text-balance mb-14">
-          “Democratizar a transformação para todos que querem fazer a diferença.”
+        <p className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] italic text-balance mb-14">
+          Democratizar a transformação para todos que querem fazer a diferença.
         </p>
         <div className="w-16 h-px bg-accent/50 mx-auto mb-10" />
         <p className="font-serif text-2xl md:text-3xl italic text-white/85 leading-snug max-w-3xl mx-auto">
