@@ -671,7 +671,7 @@ function ClientLogo({ name, src }: { name: string; src: string }) {
           src={src}
           alt={name}
           loading="lazy"
-          className="max-h-16 md:max-h-20 max-w-[80%] w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+          className="max-h-16 md:max-h-20 max-w-[80%] w-auto object-contain"
         />
       ) : (
         <span className="font-serif text-lg md:text-xl text-foreground/60 hover:text-foreground transition-all text-center px-3">
