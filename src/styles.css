@@ -13,9 +13,9 @@
   --color-accent-deep: #9C7F44;
   --color-dark: #1A1C1E;
   --color-paper: #ffffff;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Hanken Grotesk Variable", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk Variable", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Hanken Grotesk Variable", "Hanken Grotesk", ui-monospace, monospace;
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
