@@ -145,7 +145,7 @@ function Hero() {
             Consultoria em Gestão e Estratégia utilizando IA de forma eficiente
           </span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance mb-10">
-            Transformando <span className="italic text-accent-deep">Sonhos</span> em Resultados.
+            Transformando <span className="italic text-accent-deep">sonhos</span> em resultados.
           </h1>
           <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed">
             Da formulação estratégica à execução — com tecnologia, IA aplicada,
