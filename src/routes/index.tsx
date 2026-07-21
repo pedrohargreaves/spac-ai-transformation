@@ -161,7 +161,7 @@ function Hero() {
           </div>
         </div>
         <div className="hidden lg:flex justify-center items-center">
-          <SpacLogo variant="dark" className="w-full max-w-md h-auto opacity-20" />
+          <SpacLogo variant="dark" className="w-full max-w-md h-auto" />
         </div>
       </div>
     </header>
