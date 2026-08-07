@@ -9,6 +9,7 @@ import {
   Receipt,
   Sprout,
   Globe,
+  Target,
 } from "lucide-react";
 import purposeBg from "@/assets/purpose-bg.jpg";
 import servicesBg from "@/assets/services-bg.jpg";
@@ -503,14 +504,15 @@ function SeniorTeam() {
 /* ---------- SOLUTIONS ---------- */
 
 const solutions = [
-  { icon: Compass, t: "Estratégia e Planejamento", d: "Proposta de valor, posicionamento, ambição metrificada, análise interna e externa, matriz de priorização e execução dos projetos estratégicos." },
-  { icon: Globe, t: "Digital", d: "Estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L do negócio digital." },
-  { icon: BarChart3, t: "Indicadores e Metas", d: "Cadeia de valor, variáveis-chave, metas em lucratividade, rentabilidade e crescimento com desdobramento e gestão de desvios." },
-  { icon: Sprout, t: "Growth", d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes." },
+  { icon: Target, t: "Identidade", d: "Propósito, missão e valores: a base que alinha estratégia, cultura e decisões de longo prazo." },
+  { icon: Compass, t: "Estratégia", d: "Formulação, planejamento e execução: proposta de valor, posicionamento, ambição metrificada, análise interna e externa e matriz de priorização." },
+  { icon: BarChart3, t: "Alinhamento e Desdobramento de Metas", d: "Cadeia de valor, variáveis-chave, metas em lucratividade, rentabilidade e crescimento com desdobramento e gestão de desvios." },
   { icon: TrendingUp, t: "Gestão Comercial", d: "Funil de vendas, carteira, força de vendas, portfólio, canais, rituais, políticas de pricing, pós-vendas e remuneração variável." },
-  { icon: Wallet, t: "Capital Empregado", d: "Compras, estoque e recebimento — os 3 pilares da necessidade de capital de giro com metas, plano de ação e rituais." },
-  { icon: Receipt, t: "Gestão de Despesas", d: "Estudo de viabilidade de IA, gestão orçamentária, estrutura de pacotes, metas e acompanhamento do plano de ação." },
-  { icon: Workflow, t: "Gestão de Rotina e Processos", d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão." },
+  { icon: Receipt, t: "Gestão de Gastos", d: "Gestão orçamentária, estrutura de pacotes, estudo de viabilidade de IA, metas e acompanhamento do plano de ação." },
+  { icon: Workflow, t: "Gestão de Processos e Gerenciamento de Rotina", d: "Mapeamento, identificação de gargalos, planejamento de IA, implantação de padrões, treinamento e gatilhos de gestão." },
+  { icon: Wallet, t: "Gestão Financeira, M&A", d: "Estrutura de capital, fluxo de caixa, valuation, fusões, aquisições e criação de novas frentes de negócios." },
+  { icon: Sprout, t: "Growth", d: "Personas, ICP, jornada, canais, estratégias de aquisição, retenção e up-sell. Acompanhamento de LTV, CAC e novos clientes." },
+  { icon: Globe, t: "Digital", d: "Ecommerce, Retail Media e CRM: estratégia de canais, jornadas digitais, pós-venda, marketing digital, esteira de testes, LTV/CAC e P&L digital." },
 ];
 
 function Solutions() {
@@ -522,7 +524,7 @@ function Solutions() {
             Nossas Soluções
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-tight">
-            Oito frentes, um <span className="italic">único método</span>.
+            Nove frentes, um <span className="italic">único método</span>.
           </h2>
           <p className="text-muted mt-6 text-lg leading-relaxed">
             Toda solução carrega três marcas registradas da SPAC:
