@@ -101,7 +101,6 @@ function Home() {
       <Founders />
       <SeniorTeam />
       <Values />
-      <Differentiators />
       <Solutions />
       <Clients />
       <CaseSupernosso />
@@ -122,7 +121,6 @@ function SiteNav() {
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted">
           <a href="#quem-somos" className="hover:text-foreground transition-colors">Sócios</a>
           <a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a>
-          <a href="#diferenciais" className="hover:text-foreground transition-colors">Diferenciais</a>
           <a href="#solucoes" className="hover:text-foreground transition-colors">Soluções</a>
           <a href="#case" className="hover:text-foreground transition-colors">Case</a>
         </div>
@@ -179,10 +177,10 @@ function Purpose() {
       <div className="absolute inset-0 bg-dark/80" />
       <div className="relative max-w-6xl mx-auto text-center text-background">
         <SpacLogo variant="light" className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-12 opacity-100" />
-        <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-accent mb-8 block">
+        <span className="font-mono text-sm md:text-lg uppercase tracking-[0.3em] text-accent mb-8 block">
           Propósito
         </span>
-        <p className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] italic text-balance mb-14">
+        <p className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.1] italic text-balance mb-14">
           Democratizar a transformação para todos que querem fazer a diferença.
         </p>
         <div className="w-16 h-px bg-accent/50 mx-auto mb-10" />
@@ -497,8 +495,7 @@ function SeniorTeam() {
           com mais de <span className="italic text-accent-deep">15 anos</span> de experiência.
         </h2>
         <p className="text-muted text-lg leading-relaxed max-w-3xl mx-auto">
-          Cada projeto é conduzido por líderes que já ocuparam cadeiras de C-Level em empresas
-          bilionárias. Zero júnior aprendendo no seu negócio — apenas quem já transformou.
+          Profissionais com experiência em gestão e transformação em diversas empresas e segmentos.
         </p>
       </div>
     </section>
