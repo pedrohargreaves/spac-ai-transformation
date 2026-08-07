@@ -1,5 +1,7 @@
 import "@fontsource-variable/hanken-grotesk";
 import "@fontsource-variable/hanken-grotesk/wght-italic.css";
+import "@fontsource-variable/playfair-display";
+import "@fontsource-variable/playfair-display/wght-italic.css";
 
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
