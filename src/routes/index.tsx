@@ -9,9 +9,6 @@ import {
   Receipt,
   Sprout,
   Globe,
-  Sparkles,
-  UserCheck,
-  Gauge,
 } from "lucide-react";
 import purposeBg from "@/assets/purpose-bg.jpg";
 import servicesBg from "@/assets/services-bg.jpg";
@@ -101,7 +98,6 @@ function Home() {
       <Founders />
       <SeniorTeam />
       <Values />
-      <Differentiators />
       <Solutions />
       <Clients />
       <CaseSupernosso />
@@ -122,7 +118,6 @@ function SiteNav() {
         <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted">
           <a href="#quem-somos" className="hover:text-foreground transition-colors">Sócios</a>
           <a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a>
-          <a href="#diferenciais" className="hover:text-foreground transition-colors">Diferenciais</a>
           <a href="#solucoes" className="hover:text-foreground transition-colors">Soluções</a>
           <a href="#case" className="hover:text-foreground transition-colors">Case</a>
         </div>
@@ -179,10 +174,10 @@ function Purpose() {
       <div className="absolute inset-0 bg-dark/80" />
       <div className="relative max-w-6xl mx-auto text-center text-background">
         <SpacLogo variant="light" className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-12 opacity-100" />
-        <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-accent mb-8 block">
+        <span className="font-mono text-sm md:text-lg uppercase tracking-[0.3em] text-accent mb-8 block">
           Propósito
         </span>
-        <p className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] italic text-balance mb-14">
+        <p className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.1] italic text-balance mb-14">
           Democratizar a transformação para todos que querem fazer a diferença.
         </p>
         <div className="w-16 h-px bg-accent/50 mx-auto mb-10" />
@@ -497,92 +492,13 @@ function SeniorTeam() {
           com mais de <span className="italic text-accent-deep">15 anos</span> de experiência.
         </h2>
         <p className="text-muted text-lg leading-relaxed max-w-3xl mx-auto">
-          Cada projeto é conduzido por líderes que já ocuparam cadeiras de C-Level em empresas
-          bilionárias. Zero júnior aprendendo no seu negócio — apenas quem já transformou.
+          Profissionais com experiência em gestão e transformação em diversas empresas e segmentos.
         </p>
       </div>
     </section>
   );
 }
 
-/* ---------- DIFFERENTIATORS ---------- */
-
-const differentiators = [
-  {
-    icon: Sparkles,
-    t: "IA aplicada em cada projeto",
-    d: "Não é buzzword. Utilizamos IA para acelerar diagnósticos, automatizar rotinas e desenhar processos mais eficientes — do C-Level ao operacional.",
-  },
-  {
-    icon: UserCheck,
-    t: "Só sêniors no seu projeto",
-    d: "Enquanto grandes consultorias mandam times juniores aprendendo no seu bolso, na SPAC quem entrega é quem já esteve na cadeira do CEO, CFO e CMO.",
-  },
-  {
-    icon: Gauge,
-    t: "Preço justo, execução profunda",
-    d: "Estrutura enxuta e método próprio — entregamos o rigor das top-tier globais sem o custo delas. Mão na massa, quickwins e resultado que aparece no P&L.",
-  },
-];
-
-function Differentiators() {
-  return (
-    <section id="diferenciais" className="relative py-32 px-6 bg-dark text-background overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 size-[500px] rounded-full bg-accent/10 blur-3xl" />
-      </div>
-      <div className="relative max-w-7xl mx-auto">
-        <div className="max-w-3xl mb-16">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-4 block">
-            Por que SPAC
-          </span>
-          <h2 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
-            A diferença entre uma consultoria comum
-            <span className="italic text-accent"> e uma transformação real</span>.
-          </h2>
-          <p className="text-white/60 text-lg leading-relaxed">
-            O mercado se divide entre grandes casas caríssimas com times juniores e boutiques
-            sem método. Fizemos o oposto: sêniors, método próprio e IA em todo projeto.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
-          {differentiators.map((d, i) => {
-            const Icon = d.icon;
-            return (
-              <div key={d.t} className="bg-dark p-10 md:p-12 group hover:bg-accent/5 transition-colors">
-                <div className="flex items-start justify-between mb-8">
-                  <div className="inline-flex items-center justify-center size-14 border border-accent/40 bg-accent/10 text-accent group-hover:bg-accent group-hover:text-dark transition-all">
-                    <Icon className="size-6" strokeWidth={1.5} />
-                  </div>
-                  <span className="font-mono text-xs text-accent/70">0{i + 1}</span>
-                </div>
-                <h3 className="font-serif text-2xl md:text-3xl mb-4 leading-tight">{d.t}</h3>
-                <p className="text-white/65 leading-relaxed text-sm">{d.d}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Comparison strip */}
-        <div className="mt-16 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 text-sm">
-          <div className="bg-dark p-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">Big Four & Top-tier</div>
-            <p className="text-white/70 leading-relaxed">Metodologia sólida, mas <span className="text-white line-through decoration-accent/60">time júnior</span> aprendendo no seu projeto — a preços proibitivos.</p>
-          </div>
-          <div className="bg-dark p-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-4">Boutiques &amp; freelas</div>
-            <p className="text-white/70 leading-relaxed">Sêniors experientes, mas <span className="text-white line-through decoration-accent/60">sem método</span> replicável nem tecnologia — cada projeto é do zero.</p>
-          </div>
-          <div className="bg-accent/10 p-8 border border-accent/30">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">SPAC</div>
-            <p className="text-white leading-relaxed">Sêniors + método próprio SPAC + IA aplicada — na cadeira do C-Level, com preço que cabe na sua empresa.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------- SOLUTIONS ---------- */
 
